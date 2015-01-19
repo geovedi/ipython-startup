@@ -3,3 +3,8 @@
 import logging
 logging.basicConfig(format='%(asctime)s [%(process)d] [%(levelname)s] %(message)s', datefmt='%Y-%m-%d %H:%M:%S', level=logging.INFO)
 
+try:
+    import regex as re
+except ImportError:
+    import re
+
