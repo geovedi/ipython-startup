@@ -34,4 +34,3 @@ class InfiniteStreamGenerator(object):
             texts.append(text)
         return texts, targets
 
-infinite_stream = InfiniteStreamGenerator(text_train_all, target_train_all)
