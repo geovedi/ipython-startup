@@ -7,6 +7,15 @@ def gen_ngrams(tokens, MIN_N, MAX_N):
         for j in xrange(i+MIN_N, min(n_tokens, i+MAX_N)+1):
             yield tokens[i:j]
 
+from itertools import combinations
+# find all possible ordered phrases - http://stackoverflow.com/a/18406982
+def find_combo(tokens):
+    ns = range(1, len(tokens))
+    for n in ns:
+        for ix in combinations(ns, n):
+            yield [' '.join(tokens[i:j]) for i, j in zip((0,)+ix, ix+(None,))]
+
+
 # http://stackoverflow.com/a/699892
 def int2bin(i):
     return '{0:b}'.format(i)
