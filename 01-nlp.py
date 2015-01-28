@@ -25,3 +25,23 @@ def bin2int(b):
     return int(b[::-1], 2)
 
 
+# nltk.tag.util.str2tuple
+def str2tuple(s, sep='/'):
+    loc = s.rfind(sep)
+    if loc >= 0:
+        return (s[:loc], s[loc+len(sep):].upper())
+    else:
+        return (s, None)
+
+# nltk.tag.util.tuple2str
+def tuple2str(tagged_token, sep='/'):
+    word, tag = tagged_token
+    if tag is None:
+        return word
+    else:
+        assert sep not in tag, 'tag may not contain sep!'
+        return '%s%s%s' % (word, sep, tag)
+
+# nltk.tag.util.untag
+def untag(tagged_sentence):
+    return [w for (w, t) in tagged_sentence]
