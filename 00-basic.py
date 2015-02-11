@@ -7,6 +7,7 @@ logging.basicConfig(format='%(asctime)s [%(process)d] [%(levelname)s] %(message)
 try:
     import regex as re
 except ImportError:
+    logging.info('Regex module not found. Will use regular `re`.')
     import re
 
 
