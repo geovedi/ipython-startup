@@ -18,11 +18,11 @@ def find_combo(tokens):
 
 # http://stackoverflow.com/a/699892
 def int2bin(i):
-    return '{0:b}'.format(i)
+    return '{0:08b}'.format(i)
 
 
 def bin2int(b):
-    return int(b[::-1], 2)
+    return int(b, 2)
 
 
 # nltk.tag.util.str2tuple

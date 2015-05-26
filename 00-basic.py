@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import codecs
+from collections import defaultdict, Counter
 
 import logging
 logging.basicConfig(format='%(asctime)s [%(process)d] [%(levelname)s] %(message)s',
