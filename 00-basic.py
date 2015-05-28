@@ -6,6 +6,8 @@ from collections import defaultdict, Counter
 import logging
 logging.basicConfig(format='%(asctime)s [%(process)d] [%(levelname)s] %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S', level=logging.INFO)
+requests_logger = logging.getLogger('requests')
+requests_logger.setLevel('WARNING')
 
 try:
     import regex as re
